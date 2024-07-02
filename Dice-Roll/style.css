@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#container {
+    text-align: center;
+}
+
+.dice {
+    margin: 20px;
+}
+
+.dice img {
+    width: 100px;
+    height: 100px;
+}
+
+button.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#scores {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .dice img {
+        width: 60px;
+        height: 60px;
+    }
+
+    button.btn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
