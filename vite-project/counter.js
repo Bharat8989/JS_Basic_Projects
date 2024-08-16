@@ -1,8 +1,13 @@
 // Fetch exchange rates and populate currency options
 export function populateCurrencyOptions() {
   const currencySelects = document.querySelectorAll('select');
-  fetch(`https://open.exchangerate-api.com/v6/latest`)
-      .then(response => response.json())
+  fetch('./fetch.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+      })
       .then(data => {
           const currencies = Object.keys(data.rates);
           currencies.forEach(currency => {
@@ -30,8 +35,13 @@ export function convertCurrency() {
       return;
   }
 
-  fetch(`https://open.exchangerate-api.com/v6/latest`)
-      .then(response => response.json())
+  fetch('./fetch.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+      })
       .then(data => {
           const rate = data.rates[toCurrency] / data.rates[fromCurrency];
           const convertedAmount = (amount * rate).toFixed(2);

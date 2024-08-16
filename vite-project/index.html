@@ -7,22 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="converter">
-        <h1>Currency Converter</h1>
-        <div class="input-group">
-            <input type="number" id="amount" placeholder="Enter amount" />
-            <select id="fromCurrency">
-              
-            </select>
-            <span>to</span>
-            <select id="toCurrency">
-             
-            </select>
+    <div class="container1">
+        <div id="left" class="sidebar">
+            <div class="logo">
+                <!-- <img src="./public/logo.png" alt="Logo"> -->
+            </div>
+            <div class="welcome-text">
+                <h1>Hey! Welcome to New Currency Software...</h1>
+            </div>
+            <footer class="footer">
+                <p><a href="https://www.oanda.com/currency-converter/en/?from=EUR&to=USD&amount=1">Help</a></p>
+                <span>/</span>
+                <p><a href="#">Contact</a></p>
+                <span>/</span>
+                <p><a href="#">About</a></p>
+            </footer>
         </div>
-        <button id="convertBtn">Convert</button>
-        <div class="result" id="result"></div>
+    
+        <div class="converter">
+            <h1>Currency Converter</h1>
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" />
+            </div>
+            <div class="input-group">
+                <label for="fromCurrency">From:</label>
+                <select id="fromCurrency">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <button id="convertBtn">Convert</button>
+            <div class="result" id="result"></div>
+        </div>
     </div>
-   <script type="module" src="./main.js"></script>
-   
+    <script type="module" src="./main.js"></script>
 </body>
 </html>
